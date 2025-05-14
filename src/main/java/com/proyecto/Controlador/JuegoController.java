@@ -178,12 +178,20 @@ public class JuegoController implements Observador {
                 Image imagenSuelo = new Image(getClass().getResourceAsStream("/com/proyecto/Imagenes/Suelo.png"));
                 ImagePattern patronImagenSuelo = new ImagePattern(imagenSuelo);
 
+                Image imagenTrampa = new Image(getClass().getResourceAsStream("/com/proyecto/Imagenes/Trampa.jpg"));
+                ImagePattern patronImagenTrampa = new ImagePattern(imagenTrampa);
+
                 // Poner imagenes dependiendo del tipo
+                
+
                 if (celda.esPared()) {
                     fondo.setFill(patronImagenPared);
+                } else if (celda.esTrampa()) {
+                fondo.setFill(patronImagenTrampa);
                 } else {
-                    fondo.setFill(patronImagenSuelo);
+                fondo.setFill(patronImagenSuelo);
                 }
+                
 
                 celdaVisual.getChildren().add(fondo);
 
